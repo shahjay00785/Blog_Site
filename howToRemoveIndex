@@ -1,3 +1,10 @@
+how to remove index.php
+
+
+first step:-
+
+create .htaccess file in root folder of code igniter
+
 <IfModule mod_rewrite.c>
 
   RewriteEngine on
@@ -12,3 +19,21 @@
 <IfModule !mod_rewrite.c>
   ErrorDocument 404 index.php
 </IfModule>
+
+second step:-
+
+
+sudo nano /etc/apache/apache2.conf
+
+replce all AllowOverride None to AllowOverride All
+
+save it
+
+thrird step :
+
+sudo a2enmod rewrite
+
+
+four step:-
+
+sudo service apache2 resrtart
