@@ -1,10 +1,11 @@
 <?php include('Admin_header.php') ?>
-<?php echo form_open('/Admin/store_article',['class'=>'form-horizontal']); ?>
 
-<?php echo form_hidden('user_id',$this->session->userdata('user_id')); ?>
+<?php echo form_open("Admin/update_article/{$article->id}",['class'=>'form-horizontal']); ?>
 
+<?php //echo form_hidden('article_id',$this->session->userdata('user_id')); ?>
+<?php //echo form_hidden('article_id',$article->id); ?>
 <fieldset>
-  <legend>Add Article </legend>
+  <legend>EdirArticle </legend>
 
 
 
@@ -16,7 +17,8 @@
       <div class="col-lg-10">
         <?php $data=array('name' => 'title',
         'class' => 'form-control',
-        'placeholder' => 'title');
+        'placeholder' => 'title',
+          'value'=>set_value('title',$article->title));
         echo form_input($data);                 ?>
         <!--   <input class="form-control" id="inputEmail" placeholder="Email" type="text">-->
       </div>
@@ -32,7 +34,7 @@
       $data=array('name' => 'body' ,
       'class' => 'form-control',
       'placeholder' => 'Password',
-       'value'=>set_value('body'));
+       'value'=>set_value('body',$article->body));
       echo form_textarea($data);
       ?>
       <?php echo form_error('body'); ?>

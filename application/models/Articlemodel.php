@@ -14,8 +14,18 @@ class Articlemodel extends CI_Model{
      return $query->result();//so many rows that why row
    }
 
- public function find_article($article_id){
+ public function update_article($article_id,Array $article){
+   return $this->db
+         ->where('id',$article_id)
+         ->update('articles',$article);
 
+
+   //$this->db->update('articles',$article,[id'=>$article_id])
+
+ }
+
+ public function find_article($article_id){
+   //exit($article_id);
   $query=  $this->db->select(['id','title','body'])
     ->where('id',$article_id)
     ->get('articles');
