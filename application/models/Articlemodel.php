@@ -44,6 +44,9 @@ class Articlemodel extends CI_Model{
       return $this->db->insert('articles',$array);
    }
 
+public function delete_article($article_id){
+  exit($article_id);
+}
 
 
 }

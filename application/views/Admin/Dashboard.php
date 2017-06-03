@@ -43,7 +43,18 @@
               <?= anchor("Admin/edit_article/{$article->id}",'Edit',['class'=>'btn btn-default']); ?>
               <?php //anchor("Admin/edit_article/". $article->id); ?>
             <!--  <a href="#" class="btn btn-default">edit</a>-->
-              <a href="#" class="btn btn-danger">delete</a>
+            <!--  <a href="#" class="btn btn-danger">delete</a>-->
+
+
+              <?= anchor("Admin/delete_article/{$article->id}",'Delete',['class'=>'btn btn-default']); ?>
+
+            <?php
+              /*  form_open('Admin/delete_article');
+                form_hidden('article_id',$article->id);
+                form_submit(['name'=>'Submit','value'=>'delete','class'=>'btn btn-danger']);
+                form_close();
+                */
+            ?>
 
 
             </td>

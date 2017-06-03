@@ -15,7 +15,7 @@ class Admin extends CI_Controller {
 	public function dashboard(){
 		if( ! $this->session->userdata('user_id') )
 		return redirect('login');
-
+    $this->load->helper('form'); 
 		$this->load->model('Articlemodel','articles');
 		$articles=$this->articles->article_list();
 		$this->load->view('Admin/Dashboard',['articles'=>$articles]);
@@ -110,5 +110,6 @@ if($this->form_validation->run('add_article_rules')){
 		$this->load->library('form_validation');
 		$this->load->library('email');
 		$this->load->library('session');
+
 	}
 }

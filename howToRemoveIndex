@@ -1,6 +1,16 @@
 how to remove index.php
 
 
+in html floder 
+open ternminal and give the permissions
+
+sudo chmod -R 777 project_name
+
+then open config.php and do below
+
+$config['base_url']='';
+$config['index_page ]='';
+
 first step:-
 
 create .htaccess file in root folder of code igniter
@@ -23,7 +33,7 @@ create .htaccess file in root folder of code igniter
 second step:-
 
 
-sudo nano /etc/apache/apache2.conf
+sudo nano /etc/apache2/apache2.conf
 
 replce all AllowOverride None to AllowOverride All
 
@@ -36,4 +46,4 @@ sudo a2enmod rewrite
 
 four step:-
 
-sudo service apache2 resrtart
+sudo service apache2 restart
